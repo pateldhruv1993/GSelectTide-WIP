@@ -1,0 +1,71 @@
+
+html{
+	max-height: 200px;
+}
+
+body{
+	max-height: 200px;
+}
+
+#blocksParent{
+	overflow-y:hidden;
+	height: 200px;
+	width: 214px;
+}
+
+#mainCont{
+	position: relative;
+}
+
+#mCSB_1_scrollbar_vertical .mCSB_dragger{ min-height: 25px; }
+
+.blockCont{
+	clear: both;
+}
+
+.block{
+	position: relative;
+}
+
+.blockImg{
+	float: left;
+	height: 100;
+	width: auto;
+}
+
+.blockImgOverlay{
+	float: left;
+	height: 100px;
+	width: 214px;
+	background-color: #000;
+	opacity: 0.4;
+	position: absolute;
+    left: 0px;
+    top: 0px;
+}
+
+.corner-top-left{
+	top:0px;
+	left:0px;
+}
+
+.corner-top-right{
+	top:0px;
+	left:202px;
+}
+
+.corner-bottom-left{
+	top:88px;
+	left:0px;
+}
+
+.corner-bottom-right{
+	top:88px;
+	left:202px;
+}
+
+.corner{
+	position: absolute;
+	height: 12px;
+	width: auto;
+}

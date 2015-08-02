@@ -1,0 +1,25 @@
+<ti:app xmlns:ti="http://ti.appcelerator.org">
+	
+	<id>com.gselect</id>
+	<name>GSelect</name>
+	<version>1.0</version>
+	<publisher>Dhruv</publisher>
+	<url>A</url>
+	<icon>default_app_logo.png</icon>
+	<copyright>2014 by Dhruv</copyright>
+	
+	<window>
+		<id>initial</id>
+		<title>GSelect</title>
+		<url>app://index.html</url>
+		<width>290</width>
+		<height>200</height>
+		<fullscreen>false</fullscreen>
+		<resizable>false</resizable>
+		<chrome scrollbars="false">false</chrome>
+		<transparent-background>true</transparent-background>
+		<maximizable>false</maximizable>
+		<minimizable>false</minimizable>
+		<closeable>false</closeable>
+	</window>
+</ti:app>

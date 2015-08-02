@@ -1,0 +1,415 @@
+<html>
+    <head data-gwd-animation-mode="proMode">
+        <title>Settings</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="generator" content="Google Web Designer 1.2.1.0121">
+        <!--  <link rel="stylesheet" type="text/css" href="mainStyleSheet.css">-->
+        <link rel="stylesheet" type="text/css" href="settingsWindow.css">
+        <link rel="stylesheet" type="text/css" href="jquery.custom-scrollbar.css" />
+        <link rel="stylesheet" type="text/css" href="jquery.mCustomScrollbar.css" />
+        <link rel="stylesheet" type="text/css" href="nanoscroller.css" />
+        <link rel="stylesheet" type="text/css" href="hint.css">
+		<script type="text/javascript" src="./Settings/settings.js"></script>
+        <script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="jquery.color-2.1.2.js"></script>
+        <script type="text/javascript" src="jquery.hoverIntent.js"></script>
+        <!--<script type="text/javascript" src="lunr.js"></script>-->
+        <script type="text/javascript" src="fuse.js"></script>
+        <script src="jquery.mCustomScrollbar.js"></script>
+        <script src="jquery.custom-scrollbar.js"></script>
+        <script src="jquery.nanoscroller.js"></script>
+        <script type="text/javascript" src="settingsWindowApp.js"></script>
+		<script type="text/javascript" src="Sortable.js"></script>
+    </head>
+
+    <body style="overflow:auto;">
+        <div class="settingsListCont">
+            <ul class="text" style="list-style-type: none; margin:10px 0 0 5px; padding: 0px; font-weight:bold;">
+                <li class="settingsListLi settingsListLiSelected" onclick="changeTabContent(1, this)">General</li>
+                <li class="settingsListLi" onclick="changeTabContent(2, this)">Appearance</li>
+                <li class="settingsListLi" onclick="changeTabContent(3, this)">Games</li>
+                <li class="settingsListLi" onclick="changeTabContent(4, this)">Favourites</li>
+            </ul>
+        </div>
+        <div class="settingsOptionsCont">
+
+
+
+            <!------General Settings------------>
+            <div id="generalSettingsOptions" class="settingsOptionsOutterDiv">
+                <div class="settingNameHeader text">
+                    <h1>General</h1>
+                </div>
+                <div class="settingsOptionsMainCont">
+                    <table class="subOptionsCont text">
+                        <tbody>
+                            <tr class="subSettingsHeader">
+                                <td class="settingsOptionDesc">Your Steam ID</td>
+                                <td class="settingsOptionToggler"><input id="steamUserName" type="text"></td>
+                            </tr>
+							<tr class="subSettingsHeader">
+                                <td class="settingsOptionDesc">Position of Bar (X, Y) <span class="hint--bottom  hint--rounded" data-hint="'X' is distance from left of screen &amp; 'Y' is from top">
+										<img src="./Icons/infoIcon.svg" style="height: 20px;">
+									</span>
+								</td>
+                                <td class="settingsOptionToggler"><input id="positionX" type="text" style="width: 48%; margin-left: 0; margin-right: 0;"><input id="positionY" type="text" style="width: 48%;margin-left: 0;margin-right: 0;float: right;"></td>
+                            </tr>
+							<tr class="subSettingsHeader">
+                                <td class="settingsOptionDesc">Dimension of the bar (Width, Height)</td>
+                                <td class="settingsOptionToggler"><input id="resolutionW" type="text" style="width: 48%; margin-left: 0; margin-right: 0;"><input id="resolutionH" type="text" style="width: 48%;margin-left: 0;margin-right: 0;float: right;"></td>
+                            </tr>
+                            <tr class="subSettingsHeader">
+                                <td class="settingsOptionDesc">Show games that are maked as "(Obsolete)" in your games list</td>
+                                <td class="settingsOptionToggler"><input id="showObsoleteGames" type="checkbox"></td>
+                            </tr>
+                            <tr class="subSettingsHeader">
+                                <td class="settingsOptionDesc">Lock UI resizing</td>
+                                <td class="settingsOptionToggler"><input id="lockUIResizing" type="checkbox"></td>
+                            </tr>
+                            <tr class="subSettingsHeader">
+                                <td class="settingsOptionDesc">Force update your games list from Steam</td>
+                                <td class="settingsOptionToggler" style="text-align:center;"><span class="dark-matter-button" onclick='saveSettingsToObject()'>Update</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+            <!------Appearance Settings------------>
+            <div id="appearanceSettingsOptions" class="settingsOptionsOutterDiv">
+                <div class="settingNameHeader text">
+                    <h1>Appearance</h1>
+                </div>
+                <div class="settingsOptionsMainCont">
+                    <table class="subOptionsCont text">
+                        <tbody>
+                            <tr class="subSettingsHeader">
+                                <td class="settingsOptionDesc">Show Favourite icon on top-left of each game image</td>
+                                <td class="settingsOptionToggler"><input id="showFavIcon" type="checkbox"></td>
+                            </tr>
+                            <tr class="subSettingsHeader">
+                                <td class="settingsOptionDesc">Show game names at the bottom of game images</td>
+                                <td class="settingsOptionToggler"><input id="showGameName" type="checkbox"></td>
+                            </tr>
+                            <tr class="subSettingsHeader">
+                                <td class="settingsOptionDesc">Show tab name if you hover over a tab icon</td>
+                                <td class="settingsOptionToggler"><input id="showTabName" type="checkbox"></td>
+                            </tr>
+                            <tr class="subSettingsHeader">
+                                <td class="settingsOptionDesc">Which tab do you want to be shown by default when the app starts?</td>
+                                <td class="settingsOptionToggler">
+                                    <select id="whichTabToShow" >
+                                        <option value="favourite">Favourites</option>
+                                        <option value="recent">Recent</option>
+                                        <option value="all">All</option>
+                                        <option value="search">Search</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr class="subSettingsHeader">
+                                <td class="settingsOptionDesc">How do you want the game names to be shown?</td>
+                                <td class="settingsOptionToggler">
+                                    <select id="gameNameCaps">
+                                        <option value="normal">Normal</option>
+                                        <option value="all-caps">ALL CAPS</option>
+                                        <option value="all-small">all small</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr class="subSettingsHeader">
+                                <td class="settingsOptionDesc">Choose a custom font</td>
+                                <td class="settingsOptionToggler"><input id="chosenCustomFont" type="text"></td>
+                            </tr>
+                            <tr class="subSettingsHeader">
+                                <td class="settingsOptionDesc">Font-size ( Max: 29px - Min: 1px)</td>
+                                <td class="settingsOptionToggler"><input id="fontSize" type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57'></td>
+                            </tr>
+                            <tr class="subSettingsHeader">
+                                <td class="settingsOptionDesc">Choose the number of games to be shown per tab.</td>
+                                <td class="settingsOptionToggler"><input id="numberOfGamesToBeShown" type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57'></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+            <!------Game Edit Settings------------>
+            <div id="editGameSettingsOptions" class="settingsOptionsOutterDiv">
+                <div class="settingNameHeader text">
+                    <h1>Games <span class="dark-matter-button" onclick="addGameButtonHandler()" style="font-size:25px; position:relative; right:5px; float:right; padding: 5px 10px;">Add Game</span></h1>
+                </div>
+				<div class="text" style="margin-bottom:5px;">
+                    <span style="float:left;">
+						Search: <input onkeyup="searchForThis(this);" onkeypress="searchForThis(this);" type="text" style="">
+					</span>
+                    <span id="editGameSearchErrorMsg" style="float: left;width:  calc(100% - 264px);white-space: nowrap; overflow: hidden;text-overflow: ellipsis;"></span>
+                </div>
+                <div class="settingsOptionsGameEditMainCont">
+                    <ul id="editInfoAddLiToThis" class="settingsOptionGameList">
+
+                    </ul>
+                </div>	
+            </div>
+
+
+            <!------Favourite Edit Settings------------>
+            <div id="editFavSettingsOptions" class="settingsOptionsOutterDiv">
+                <div class="settingNameHeader text">
+                    <h1>Favourites</h1>
+                </div>
+                <div class="settingsOptionsFavGameEditMainCont">
+					<ul id="editFavInfoAddLiToThis" class="settingsOptionGameList">
+
+					</ul>
+                </div>	
+            </div>
+
+
+            <!------Edit Game Tab-----------
+            <div id="editGameInfo" class="settingsOptionsOutterDiv">
+                    <div class="settingNameHeader text">
+                            <h1>Edit: Team Fortress 2</h1>
+                    </div>
+                    <div class="settingsOptionsMainCont nano" style="width: 100%;height: 500px;">
+                            <div id="editInfoListCont" class="nano-content">
+                                    <div id="editFavInfoAddLiToThis">
+                                            <div>
+                                                    <div style="float: left; width: 214px;height: 100px; padding: 5px;border: 1px solid #ccc; display: table;">
+                                                            <div style="display: table-cell;vertical-align: middle;">
+                                                                    <img src="http://files.gamebanana.com/img/ico/games/4f5a605d0eb52.png" style="display: block;margin: 0 auto;">
+                                                            </div>
+                                                    </div>
+                                                    <div class="text" style="float: left; margin-left: 8px;">
+                                                            Name: <input type="text"><br>
+                                                            Image: <button>Browse</button><br>
+                                                            Exe Path: <button>Browse</button>
+                                                    </div>
+                                            </div>
+                                    </div>
+                                    
+                                    
+                                    <div id="editFavInfoAddLiToThis">
+                                            <div>
+                                                    <div style="float: left; width: 214px;height: 100px; padding: 5px;border: 1px solid #ccc; display: table;">
+                                                            <div style="display: table-cell;vertical-align: middle;">
+                                                                    <img src="C:/Users/Dhruv/Downloads/searchicon-0.png" style="display: block;margin: 0 auto;">
+                                                            </div>
+                                                    </div>
+                                                    <div class="text" style="float: left; margin-left: 8px;">
+                                                            Name: <input type="text"><br>
+                                                            Image: <button>Browse</button><br>
+                                                            Exe Path: <button>Browse</button>
+                                                    </div>
+                                            </div>
+                                    </div>
+                                    
+                                    
+                            </div>
+                    </div>	
+            </div>
+            ->
+            
+      </div>
+    
+    
+    </body>
+    </html>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+            <!--********************************************************************
+            
+            <li class="listImageLi">
+                                                            <img src="./GameBanner/440.jpg" class="listImage">
+                                                            <div class="listInfoCont">
+                                                                    <div class="text" style="font-size: 30px;">Team Fortress 2</div>
+                                                                    <table style="width: 100%; color: #fff; /*table-layout: fixed;*/">
+                                                                            <tbody>
+                                                                                    <tr class="dark-matter">
+                                                                                            <td><span class="button">Edit</span></td>
+                                                                                            <td><span class="button">Favourite</span></td>
+                                                                                            <td><span class="button">Hide</span></td>
+                                                                                    </tr>
+                                                                            </tbody>
+                                                                    </table>
+                                                            </div>
+                                                    </li>
+                                                    <li class="listImageLi">
+                                                            <img src="./GameBanner/107410.jpg" class="listImage">
+                                                            <div class="listInfoCont">
+                                                                    <div class="text" style="font-size: 30px;">ARMA 3</div>
+                                                                    <table style="width: 100%; color: #fff; /*table-layout: fixed;*/">
+                                                                            <tbody>
+                                                                                    <tr class="dark-matter">
+                                                                                            <td><span class="button">Edit</span></td>
+                                                                                            <td><span class="button">Favourite</span></td>
+                                                                                            <td><span class="button">Hide</span></td>
+                                                                                    </tr>
+                                                                            </tbody>
+                                                                    </table>
+                                                            </div>
+                                                    </li>
+                                                    <li class="listImageLi">
+                                                            <img src="./GameBanner/440.jpg" class="listImage">
+                                                            <div class="listInfoCont">
+                                                                    <div class="text" style="font-size: 30px;">Team Fortress 2</div>
+                                                                    <table style="width: 100%; color: #fff; /*table-layout: fixed;*/">
+                                                                            <tbody>
+                                                                                    <tr class="dark-matter">
+                                                                                            <td><span class="button">Edit</span></td>
+                                                                                            <td><span class="button">Favourite</span></td>
+                                                                                            <td><span class="button">Hide</span></td>
+                                                                                    </tr>
+                                                                            </tbody>
+                                                                    </table>
+                                                            </div>
+                                                    </li>
+                                                    <li class="listImageLi">
+                                                            <img src="./GameBanner/107410.jpg" class="listImage">
+                                                            <div class="listInfoCont">
+                                                                    <div class="text" style="font-size: 30px;">ARMA 3</div>
+                                                                    <table style="width: 100%; color: #fff; /*table-layout: fixed;*/">
+                                                                            <tbody>
+                                                                                    <tr class="dark-matter">
+                                                                                            <td><span class="button">Edit</span></td>
+                                                                                            <td><span class="button">Favourite</span></td>
+                                                                                            <td><span class="button">Hide</span></td>
+                                                                                    </tr>
+                                                                            </tbody>
+                                                                    </table>
+                                                            </div>
+                                                    </li>
+                                                    <li class="listImageLi">
+                                                            <img src="./GameBanner/440.jpg" class="listImage">
+                                                            <div class="listInfoCont">
+                                                                    <div class="text" style="font-size: 30px;">Team Fortress 2</div>
+                                                                    <table style="width: 100%; color: #fff; /*table-layout: fixed;*/">
+                                                                            <tbody>
+                                                                                    <tr class="dark-matter">
+                                                                                            <td><span class="button">Edit</span></td>
+                                                                                            <td><span class="button">Favourite</span></td>
+                                                                                            <td><span class="button">Hide</span></td>
+                                                                                    </tr>
+                                                                            </tbody>
+                                                                    </table>
+                                                            </div>
+                                                    </li>
+                                                    <li class="listImageLi">
+                                                            <img src="./GameBanner/107410.jpg" class="listImage">
+                                                            <div class="listInfoCont">
+                                                                    <div class="text" style="font-size: 30px;">ARMA 3</div>
+                                                                    <table style="width: 100%; color: #fff; /*table-layout: fixed;*/">
+                                                                            <tbody>
+                                                                                    <tr class="dark-matter">
+                                                                                            <td><span class="button">Edit</span></td>
+                                                                                            <td><span class="button">Favourite</span></td>
+                                                                                            <td><span class="button">Hide</span></td>
+                                                                                    </tr>
+                                                                            </tbody>
+                                                                    </table>
+                                                            </div>
+                                                    </li>
+                                                    <li class="listImageLi">
+                                                            <img src="./GameBanner/440.jpg" class="listImage">
+                                                            <div class="listInfoCont">
+                                                                    <div class="text" style="font-size: 30px;">Team Fortress 2</div>
+                                                                    <table style="width: 100%; color: #fff; /*table-layout: fixed;*/">
+                                                                            <tbody>
+                                                                                    <tr class="dark-matter">
+                                                                                            <td><span class="button">Edit</span></td>
+                                                                                            <td><span class="button">Favourite</span></td>
+                                                                                            <td><span class="button">Hide</span></td>
+                                                                                    </tr>
+                                                                            </tbody>
+                                                                    </table>
+                                                            </div>
+                                                    </li>
+                                                    <li class="listImageLi">
+                                                            <img src="./GameBanner/107410.jpg" class="listImage">
+                                                            <div class="listInfoCont">
+                                                                    <div class="text" style="font-size: 30px;">ARMA 3</div>
+                                                                    <table style="width: 100%; color: #fff; /*table-layout: fixed;*/">
+                                                                            <tbody>
+                                                                                    <tr class="dark-matter">
+                                                                                            <td><span class="button">Edit</span></td>
+                                                                                            <td><span class="button">Favourite</span></td>
+                                                                                            <td><span class="button">Hide</span></td>
+                                                                                    </tr>
+                                                                            </tbody>
+                                                                    </table>
+                                                            </div>
+                                                    </li>
+                                                    <li class="listImageLi">
+                                                            <img src="./GameBanner/440.jpg" class="listImage">
+                                                            <div class="listInfoCont">
+                                                                    <div class="text" style="font-size: 30px;">Team Fortress 2</div>
+                                                                    <table style="width: 100%; color: #fff; /*table-layout: fixed;*/">
+                                                                            <tbody>
+                                                                                    <tr class="dark-matter">
+                                                                                            <td><span class="button">Edit</span></td>
+                                                                                            <td><span class="button">Favourite</span></td>
+                                                                                            <td><span class="button">Hide</span></td>
+                                                                                    </tr>
+                                                                            </tbody>
+                                                                    </table>
+                                                            </div>
+                                                    </li>
+                                                    <li class="listImageLi">
+                                                            <img src="./GameBanner/107410.jpg" class="listImage">
+                                                            <div class="listInfoCont">
+                                                                    <div class="text" style="font-size: 30px;">ARMA 3</div>
+                                                                    <table style="width: 100%; color: #fff; /*table-layout: fixed;*/">
+                                                                            <tbody>
+                                                                                    <tr class="dark-matter">
+                                                                                            <td><span class="button">Edit</span></td>
+                                                                                            <td><span class="button">Favourite</span></td>
+                                                                                            <td><span class="button">Hide</span></td>
+                                                                                    </tr>
+                                                                            </tbody>
+                                                                    </table>
+                                                            </div>
+                                                    </li>
+                                                    <li class="listImageLi">
+                                                            <img src="./GameBanner/440.jpg" class="listImage">
+                                                            <div class="listInfoCont">
+                                                                    <div class="text" style="font-size: 30px;">Team Fortress 2</div>
+                                                                    <table style="width: 100%; color: #fff; /*table-layout: fixed;*/">
+                                                                            <tbody>
+                                                                                    <tr class="dark-matter">
+                                                                                            <td><span class="button">Edit</span></td>
+                                                                                            <td><span class="button">Favourite</span></td>
+                                                                                            <td><span class="button">Hide</span></td>
+                                                                                    </tr>
+                                                                            </tbody>
+                                                                    </table>
+                                                            </div>
+                                                    </li>
+                                                    <li class="listImageLi">
+                                                            <img src="./GameBanner/107410.jpg" class="listImage">
+                                                            <div class="listInfoCont">
+                                                                    <div class="text" style="font-size: 30px;">ARMA 3</div>
+                                                                    <table style="width: 100%; color: #fff; /*table-layout: fixed;*/">
+                                                                            <tbody>
+                                                                                    <tr class="dark-matter">
+                                                                                            <td><span class="button">Edit</span></td>
+                                                                                            <td><span class="button">Favourite</span></td>
+                                                                                            <td><span class="button">Hide</span></td>
+                                                                                    </tr>
+                                                                            </tbody>
+                                                                    </table>
+                                                            </div>
+                                                    </li>
+            
+            ********************************************************************-->

@@ -1,0 +1,179 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="mainStyleSheet.css">
+        <link rel="stylesheet" type="text/css" href="jquery.custom-scrollbar.css" />
+        <script src="jquery.custom-scrollbar.js" type="text/javascript"></script>
+        <link rel="stylesheet" type="text/css" href="nanoscroller.css" />
+        <link rel="stylesheet" type="text/css" href="hint.css">
+		
+		<script type="text/javascript" src="../settings.js"></script>
+		<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="jquery.color-2.1.2.js"></script>
+        <script type="text/javascript" src="jquery.hoverIntent.js"></script>
+        <!--<script type="text/javascript" src="lunr.js"></script>-->
+        <script type="text/javascript" src="fuse.js"></script>
+        <script type="text/javascript" src="XML2JSON.js"></script>
+        <script type="text/javascript" src="xml2json2.js"></script>
+        <script type="text/javascript" src="app.js"></script>
+        <script type="text/javascript" src="jquery.custom-scrollbar.js"></script>
+        <script type="text/javascript" src="jquery.nanoscroller.js"></script>
+    </head>
+    <body style="background:#292A2E;" onbeforeunload="ConfirmClose()"">
+        <div>
+            <input id="searchBox" onKeyUp="searchForThis(this);"  onKeyPress="searchForThis(this);" class="inputs" type="text" placeholder="Search"/>
+            <div style="float: left; width: 100%;">
+                <div id="favourites-tab" data-hint="Favourites" class="tabs hint--bottom hint--rounded"><img class="tabIcon" src="./Icons/favouriteInactive.png"></div>
+                <div id="recent-tab" data-hint="Recent" class="tabs hint--bottom hint--rounded"><img class="tabIcon" src="./Icons/recentInactive.png"></div>
+                <div id="all-tab" data-hint="All" class="tabs hint--bottom hint--rounded"><img class="tabIcon" style="height:25px" src="./Icons/sortedInactive.png"></div>
+                <div id="results-tab" data-hint="Results" class="tabs hint--bottom hint--rounded"><img class="tabIcon" src="./Icons/searchInactive.png"></div>
+            </div>
+        </div>	
+
+        <div id="favouriteResults" class="nano mainTabCont">
+            <div class="nano-content" style="width: 214px;">
+                <ul id="favouriteBlocksParent">
+
+                </ul>
+            </div>
+        </div>
+
+        <div id="recentResults" class="nano mainTabCont">
+            <div class="nano-content" style="width: 214px;">
+                <ul id="recentBlocksParent">
+
+                </ul>
+            </div>
+        </div>
+
+        <div id="allResults" class="nano mainTabCont">
+            <div class="nano-content" style="width: 214px;">
+                <ul id="allBlocksParent">
+
+                </ul>
+            </div>
+        </div>
+
+        <div id="searchResults" class="nano mainTabCont">
+            <div class="nano-content" style="width: 214px;">
+                <ul id="searchBlocksParent">
+
+                </ul>
+            </div>
+        </div>
+
+
+
+
+    </body>
+</html>
+
+
+
+
+
+<!--<li class="gameImageLi" style="background-image: url(./GameBanner/440.jpg);">
+                                        <div class="gameImageOverlay"><div class="gameNameDiv text">Team fortressdassdddddddddddddddddddh 2</div></div>
+                                </li>
+                                <li class="gameImageLi" style="background-image: url(./GameBanner/107410.jpg);">
+                                        <div class="gameImageOverlay"><div class="gameNameDiv text">ARMA 3</div></div>
+                                </li>-->	
+
+
+
+
+
+
+
+<!--<body style="margin:0">
+        <div id="mainCont">
+                <div id="blocksParent">
+                        
+                </div>
+        </div>
+</body>
+</html> 
+
+<div class="blockCont">
+                                <div class="block">
+                                        <img src="./GameBanner/440.jpg" class="blockImg">
+                                        <div class="blockImgOverlay"></div>	
+                                </div>
+                        </div> 
+                        <div class="blockCont">
+                                <div class="block">
+                                        <img src="./GameBanner/107410.jpg" class="blockImg">
+                                        <div class="blockImgOverlay"></div>	
+                                </div>
+                        </div>
+                        <div class="blockCont">
+                                <div class="block">
+                                        <img src="./GameBanner/440.jpg" class="blockImg">
+                                        <div class="blockImgOverlay"></div>	
+                                </div>
+                        </div> 
+                        <div class="blockCont">
+                                <div class="block">
+                                        <img src="./GameBanner/107410.jpg" class="blockImg">
+                                        <div class="blockImgOverlay"></div>
+                                </div>
+                        </div>
+                        <div class="blockCont">
+                                <div class="block">
+                                        <img src="./GameBanner/440.jpg" class="blockImg">
+                                        <div class="blockImgOverlay"></div>	
+                                </div>
+                        </div> 
+                        <div class="blockCont">
+                                <div class="block">
+                                        <img src="./GameBanner/107410.jpg" class="blockImg">
+                                        <div class="blockImgOverlay"></div>	
+                                </div>
+                        </div>
+                        <div class="blockCont">
+                                <div class="block">
+                                        <img src="./GameBanner/440.jpg" class="blockImg">
+                                        <div class="blockImgOverlay"></div>	
+                                </div>
+                        </div> 
+                        <div class="blockCont">
+                                <div class="block">
+                                        <img src="./GameBanner/107410.jpg" class="blockImg">
+                                        <div class="blockImgOverlay"></div>	
+                                </div>
+                        </div>
+                        <div class="blockCont">
+                                <div class="block">
+                                        <img src="./GameBanner/440.jpg" class="blockImg">
+                                        <div class="blockImgOverlay"></div>	
+                                </div>
+                        </div> 
+                        <div class="blockCont">
+                                <div class="block">
+                                        <img src="./GameBanner/107410.jpg" class="blockImg">
+                                        <div class="blockImgOverlay"></div>	
+                                </div>
+                        </div>
+                        <div class="blockCont">
+                                <div class="block">
+                                        <img src="./GameBanner/440.jpg" class="blockImg">
+                                        <div class="blockImgOverlay"></div>	
+                                </div>
+                        </div> 
+                        <div class="blockCont">
+                                <div class="block">
+                                        <img src="./GameBanner/107410.jpg" class="blockImg">
+                                        <div class="blockImgOverlay"></div>	
+                                </div>
+                        </div>
+                        <div class="blockCont">
+                                <div class="block">
+                                        <img src="./GameBanner/440.jpg" class="blockImg">
+                                        <div class="blockImgOverlay"></div>	
+                                </div>
+                        </div> 
+                        <div class="blockCont">
+                                <div class="block">
+                                        <img src="./GameBanner/107410.jpg" class="blockImg">
+                                        <div class="blockImgOverlay"></div>
+                                </div>
+                        </div> -->

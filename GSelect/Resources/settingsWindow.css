@@ -1,0 +1,286 @@
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+::-webkit-scrollbar-thumb {
+    min-height: 50px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+
+#editFavInfoAddLiToThis > li{
+	cursor: move;
+}
+
+.settingsGamesListGameNames{
+	font-size: 30px !important;
+	word-break: break-word;
+	text-transform: capitalize;
+}
+
+.settingsOptionGameList{
+    margin: 0 0 0 5px;
+    padding: 0;
+	position: relative;
+    float:left;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 100%;
+}
+
+.edtiBoxLabel{
+    font-weight:bold;
+}
+
+.editBoxRealName{
+    margin-left: 20px;
+}
+
+.editInputCont input[type="text"]{
+    margin-left: 20px;
+    width: 95%;
+}
+
+.editInputCont{
+    height: 0;
+    margin-right: 10px;
+    overflow: hidden;
+    clear:both;
+}
+
+.editInputCont .listInfoCont{
+    margin-top: 10px;
+}
+
+.changeArtworkCont{
+    float: left;
+    clear: left;
+    width: 173px;
+    text-align: center;
+}
+
+
+.listImageLi {
+    padding: 5px;
+    float: left;
+    width: calc(100% - 10px);
+}
+
+.listImageLi:hover {
+    background-color:#c5c5c5 ;
+}
+
+.dark-matter td{
+    text-align:center;
+}
+
+.listImageContOut{
+    float: left;
+    width: 171px;
+    height: 80px;
+    border: 1px solid #ccc;
+    display: table;
+}
+
+.listImageContMid{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.artworkButton{
+    margin: 5px 5px 0 5px;
+    display: block;
+    font-size: 20px;
+}
+
+.listImage {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto 100%;
+    border: 1px solid #000;
+    height: 80px;
+    width: 171px;
+    float: left;
+}
+
+.listInfoCont {
+    margin: 0 10px 0 180px;
+}
+
+
+td{
+    padding: 10px 5px;
+}
+
+h1{
+    border-bottom: 2px solid;
+    border-color: #000;
+}
+
+html, body {
+    width: 100%;
+    margin: 0px;
+    font-family: Helvetica;
+}
+
+.text{
+    font-size:20px;
+}
+
+.settingsListCont {
+    width: 20%;
+    float: left;
+    background:#292A2E;
+    height: 100%;
+}
+.settingsOptionsCont {
+    float: left;
+    width: 80%;
+    height: 100%;
+    background-color: #fff;
+}
+
+.settingsListLi{
+    padding: 10px 0 10px 5px;
+    font-size: 25px;
+    color:#fff;
+}
+
+.settingsListLiSelected{
+    /*background-color:#ccc;*/
+    background-color: #FFF;
+    padding: 10px 0 10px 5px;
+    font-size: 25px;
+    color: #000;
+}
+
+.settingsListLi:hover{
+    /*background-color:#ccc;*/
+    background-color: #47484d ;
+    color: #fff;
+}
+
+.settingsOptionsMainCont {
+    width: 100%;
+}
+
+.subOptionsCont {
+    width:100%;
+}
+
+.subSettingsHeader {
+    width: 100%;
+}
+
+.settingsOptionDesc {
+    width: 80%;
+}
+
+.settingsOptionToggler {
+    width: 20%;
+}
+
+.settingsOptionToggler * {
+    width: 100%;
+}
+
+.settingsOptionsOutterDiv {
+    overflow:hidden;
+    margin: 0 20px;
+}
+.gwd-new-class-g6q6 {}
+
+/*---------Dark Matter CSS lib------------*/
+/* #### Dark Matter #### */
+.dark-matter {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 500px;
+    /*background: #555;*/
+    padding: 20px 30px 20px 30px;
+    font: 20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #D3D3D3;
+    border: none;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+}
+.dark-matter h1 {
+    padding: 0px 0px 10px 40px;
+    display: block;
+    border-bottom: 1px solid #444;
+    margin: -10px -30px 30px -30px;
+}
+.dark-matter h1>span {
+    display: block;
+    font-size: 11px;
+}
+.dark-matter label {
+    display: block;
+    margin: 0px 0px 5px;
+}
+.dark-matter label>span {
+    float: left;
+    width: 20%;
+    text-align: right;
+    padding-right: 10px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+input[type="text"], input[type="email"],  textarea,  select {
+    border: none;
+    position: relative;
+    bottom: 2px;
+    font-size:15px;
+    color: #525252;
+    line-height:15px;
+    margin-bottom: 16px;
+    margin-right: 6px;
+    margin-top: 2px;
+    outline: 0 none;
+    padding: 5px 0px 5px 5px;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    background: #DFDFDF;
+}
+.dark-matter select {
+    background: #DFDFDF url('down-arrow.png') no-repeat right;
+    background: #DFDFDF url('down-arrow.png') no-repeat right;
+    appearance:none;
+    -webkit-appearance:none; 
+    -moz-appearance: none;
+    text-indent: 0.01px;
+    text-overflow: '';
+    height: 35px;
+    color: #525252;
+    line-height: 25px;
+}
+.dark-matter textarea{
+    height:100px;
+    padding: 5px 0px 0px 5px;
+    width: 70%;
+}
+.dark-matter-button {
+	cursor: pointer;
+    background: #FFCC02;
+    border: none;
+    padding: 10px 20px;
+    color: #585858;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    font-weight: bold;
+    box-shadow: 1px 1px 1px #3D3D3D;
+    -webkit-box-shadow:1px 1px 1px #3D3D3D;
+    -moz-box-shadow:1px 1px 1px #3D3D3D;
+}
+
+.dark-matter-button:hover {
+    color: #333;
+    background-color: #EBEBEB;
+}

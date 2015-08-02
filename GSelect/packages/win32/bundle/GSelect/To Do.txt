@@ -1,0 +1,95 @@
+*******************
+//IMPORTANT NOTES//
+*******************
+
+- Instead of saving settings.js in the same folder as app.js or one above app.js, save it using Ti.AppDirectory and then import that js file on start up
+
+- Make changes to generateGamesList function in app.js and settingsWindowApp.js. Make it so that a fresh gameList is generated every time the function is
+	called (To preserve the recent games played order). object check if its favourited and if so change the gameBlockHtml to change the image of favIcon
+	cont.
+
+- All the generateGameBlock (both for main app.js and settingsWindowApp.js) will need real value for the doesImageExists rather
+	than a fake "true" value all the time.
+	
+- Also make it so that the images in both app.js and settingsWindowApp.js use the actual image set by user and the default one 
+	from steam if no image was set by user
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+
++ Able to read the gamesList from settings.dat if problem with internet
+
+
+- Add messages for favourite and search tab to instruct users what to do in order to populate the tab
+
+
+- Add tabs at the bottom for opening steam, random game and (Maybe browser?!)
+
+
+- Add input box that will ask user for his steam username on running the program for the first time
+
+
+- Add a confirm dialog box that will appear every time a user drags and drops an application to add to the list. Also add an option to disable that in the settings menu
+
+
++ Remove the dotted border that shows up when the GSelect window is in focus
+ 
+
+- Ability to force update list from steamAPI (General Settings)
+
+
+- Random button that will show a random game depending upon a good algorithm
+
+
+- Add UI scalability {
+	- Being able to resize the window
+	- Saving the rescaled size to the settings.dat file
+	- Loading the rescaled size from settings.dat file
+}
+
+
+- Add settings window {
+	- Able to rename game names (Edit games settings)
+	- Able to change the image for games without any banner image (Edit games settings)
+	- Able to choose the default tab to open when the app starts (Appearance Settings)
+	- Able to ignore some games from recent, sorted list and search (Edit games settings)
+	- Able to change the image for a game (Edit games settings)
+	- Able to lock scalability of the UI (General Settings)
+	- Able to change the scroll speed of the custom scrollbar (For scroll wheels and touchpads)
+	- [Advanced] Able to toggle the visibility of some stuff { (Appearance Settings)
+		- Toggle favourite icons (shown on the top left corner of game banners)
+		- Toggle game names
+		- Toggle the tab name that shows up upon hovering the tab 
+	}
+	- [Advanced] Able to change { (Appearance Settings)
+		- Font style
+		- Toggle between all caps, all small and normal
+		- Able to toggle font-size
+	}
+	- [Advanced] Able to calculate entire UI upon changing the max visible gameBlocks per tab. e.g. User selects he wants only 10 gameBlocks to be visible at one time, the UI should figure out the best width/height of every other element depending upon that number (Appearance setting)
+	- [Advanced] User can tag his games (fps, mmo, moba etc) and that should be save to our server so that new users can have their games tagged before hands. This should consider the number of users that tagged their game with particular tag to find out the best tags for a game 
+}
+
+
+- Able to drag and drop a shortcut or an exe to the UI window and that should add the program/game to the gamesList. This should also search for an appropriate image for the game/program online{
+	- [Advanced] This should open the settings window with the edit game  tab selected. Should show suggestions for images and game/program name
+}
+
+
+- [Advanced] Able to change the order of favourited games and tab dragging and droppings. Also saving their new positions to settings.dat file (Favourite List setting)
+
+
+- [Advanced] Add advanced algorithm for random game{
+	- Select at random weather you want the game to be selected depending upon the highest probability or just a random game that has not been played a lot
+	- Should have a "probability" variable for each game that decides which game has the higher chances of being selected upon clicking the "random button"
+	- "Probability" should go up if the "total hours" of a particular game is higher and the "total number of house in last two weeks" is lower compared to other games
+	- Store the last couple of games played today so that you can negate the game that was just played/closed
+	- [Advanced Uber Ultra Mega Deluxe] Settings option (for each game) "burned out/ game over" that will significantly lower the probability of a game being selected for the random game
+}
+
+
+/////////////////////////////////////////////////////////////////////////////////////////
+**************************************** NOTES ******************************************
+/////////////////////////////////////////////////////////////////////////////////////////
+
+
